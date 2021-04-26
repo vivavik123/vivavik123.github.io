@@ -1,0 +1,148 @@
+<style>
+
+#wrap { 
+width: 32%; height: 32%; padding: 0; overflow: hidden; 
+float: left;
+}
+
+
+#scaled-frame { width: 1280px; height: 720px; border:1px;}
+#scaled-frame { 
+zoom: 0.33;
+-moz-transform: scale(0.33);
+-moz-transform-origin: 0 0;
+-o-transform: scale(0.33);
+-o-transform-origin: 0 0;
+-webkit-transform: scale(0.33);
+-webkit-transform-origin: 0 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+#scaled-frame  { zoom: 1.3;  }
+}
+
+#table {
+    display: table;
+}
+
+.row {
+    display: table-row;
+}
+
+.cell {
+    display: table-cell;
+    padding: 10px;
+}
+
+</style>
+
+<html lang="hu">
+<!-- Igen, biztos lehet ezt szebben és jobban is csinálni, nem ez a szakterületem... -->
+<head>
+  <meta charset="utf-8">
+  <title>Kapcsolgatunk???</title>
+</head>
+<body onload="genFunction()">
+
+
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+
+  <div id="wrap">
+    <iframe class="frame1" id="scaled-frame" src=""  ></iframe>
+  </div>
+
+<script type="text/javascript">
+
+
+  
+window.onload = function()  {
+  const queryString = window.location.search;
+  console.log(queryString);
+  const urlParams = new URLSearchParams(queryString);
+  
+ var Url = urlParams.get("cikkUrl");
+ var urlPath = Url.replace (/^[a-z]{4,5}\:\/{2}[a-z]{1,}\:[0-9]{1,4}.(.*)/, '$1');
+ var my_press = [
+	"https://www.baon.hu/", 
+	"https://www.bama.hu/", 
+	"https://www.beol.hu/", 
+	"https://www.szoljon.hu/",
+	"https://www.duol.hu/",
+	"https://www.zaol.hu/",
+	"https://www.heol.hu/",
+	"https://www.feol.hu/",
+	"https://www.veol.hu/",
+	"https://www.sonline.hu/",
+ 	"https://www.nool.hu/",
+	"https://www.teol.hu/",
+	"https://www.vaol.hu/",
+	"https://www.kemma.hu/",
+	"https://www.delmagyar.hu/",
+	"https://www.kisalfold.hu/",
+	"https://www.erdon.ro/",
+ ];
+ var src=document.getElementById("scaled-frame").getAttribute("src")
+ var frames = document.getElementsByClassName("frame1");
+ var i;
+ for (i = 0; i < frames.length; i++) {
+ frames[i].setAttribute("src", my_press[i] + urlPath );
+ }
+
+}
+
+ </script>
+
+
+</body>
+
+</html>
